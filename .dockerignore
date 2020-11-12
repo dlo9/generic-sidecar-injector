@@ -1,0 +1,13 @@
+.dockerignore
+.gitignore
+.travis.yml
+./CODE_OF_CONDUCT.md
+./Dockerfile
+./LICENSE.txt
+./Makefile
+./README.md
+./SECURITY.md
+./helm/
+.dockerignore
+.gitignore
+.travis.yml
