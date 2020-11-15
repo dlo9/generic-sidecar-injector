@@ -7,12 +7,11 @@ apiVersion: admissionregistration.k8s.io/v1beta1
 kind: MutatingWebhookConfiguration
 metadata:
   name: {{ .Values.appname }}-webhook-cfg
-  namespace: {{ .Values.namespace }}
 webhooks:
   - clientConfig:
       service:
         name: {{ .Values.appname }}
-        namespace: {{ .Values.namespace }}
+        namespace: {{ .Release.Namespace }}
         path: /mutate
       caBundle: {{ b64enc $ca.Cert }}
     failurePolicy: Fail
@@ -36,7 +35,6 @@ apiVersion: v1
 kind: Secret
 metadata:
   name: {{ .Values.appname }}-certificate
-  namespace: {{ .Values.namespace }}
 data:
   cert.pem: {{ b64enc $cert.Cert }}
   key.pem: {{ b64enc $cert.Key }}

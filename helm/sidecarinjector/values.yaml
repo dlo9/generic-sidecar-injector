@@ -4,7 +4,6 @@
 
 replicaCount: 1
 appname: sidecarinjector
-namespace: sidecarinjector
 image:
   repository: mayankkr/sidecarinjector
   tag: v1
