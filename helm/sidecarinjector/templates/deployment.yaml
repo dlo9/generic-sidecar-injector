@@ -34,8 +34,8 @@ spec:
             - --port={{ .Values.service.targetPort }}
             - --sidecar-config-file=/etc/webhook/config/sidecarconfig.yaml
             - --mutation-config-file=/etc/webhook/config/mutationconfig.yaml
-            - --cert-file-path=/etc/webhook/certs/tls.crt
-            - --key-file-path=/etc/webhook/certs/tls.key
+            - --cert-file-path=/etc/webhook/certs/cert.pem
+            - --key-file-path=/etc/webhook/certs/key.pem
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
