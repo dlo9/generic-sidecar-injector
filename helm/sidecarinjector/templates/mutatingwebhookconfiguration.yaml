@@ -19,8 +19,8 @@ webhooks:
     namespaceSelector:
       matchExpressions:
         - key: sidecar-injection
-          operator: NotIn
-          values: ["disabled"]
+          operator: In
+          values: ["enabled"]
     rules:
       - apiGroups:
           - ""
